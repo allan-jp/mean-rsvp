@@ -9,6 +9,7 @@
 # dependencies
 /node_modules
 /server/config.js
+/src/app/auth/auth.config.ts
 
 # IDEs and editors
 /.idea
