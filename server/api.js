@@ -3,6 +3,8 @@
 
 const jwt = require('express-jwt');
 const jwks = require('jwks-rsa');
+const Event = require('./models/Event');
+const Rsvp = require('./models/Rsvp');
 
 /*** Authentication Middleware ***/
 
