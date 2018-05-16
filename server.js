@@ -11,7 +11,8 @@ const cors = require('cors');
 // Config
 const config = require('./server/config');
 
-/*** MongoDB ***/
+/*** Mongo DB ***/
+
 mongoose.connect(config.MONGO_URI);
 const monDb = mongoose.connection;
 
@@ -24,6 +25,7 @@ monDb.once('open', function callback() {
 });
 
 /*** App ***/
+
 const app = express();
 
 app.use(bodyParser.json());
@@ -42,6 +44,7 @@ if (process.env.NODE_ENV !== 'dev') {
 }
 
 /*** Routes ***/
+
 require('./server/api')(app, config);
 
 // Pass routing to Angular app
@@ -53,4 +56,5 @@ if (process.env.NODE_ENV !== 'dev') {
 }
 
 /*** Server ***/
+
 app.listen(port, () => console.log(`Server running on localhost:${port}`));
